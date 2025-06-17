@@ -1,11 +1,20 @@
 //Create squares in grid
-function drawGrid(gridSize) {
+function drawGrid() {
     for (let i = 0; i < gridSize * gridSize; i++) {
         const square = document.createElement("div");
         square.classList.add("square");
         square.style.width = `${grid.offsetWidth / gridSize}px`;
         square.style.height = `${grid.offsetWidth / gridSize}px`;
+        square.style.outline = "solid red 1px"
         grid.appendChild(square);
+    }
+}
+
+//Removes the squares in the grid
+function removeGrid() {
+    const squares = document.querySelectorAll(".square");
+    for (let square of squares) {
+        square.remove();
     }
 }
 
@@ -20,19 +29,25 @@ function buttonClick() {
     }
 
     gridSize = Number(input);
-    drawGrid(gridSize);
+
+    removeGrid();
+    drawGrid();
 }
 
 let gridSize = 16;
+
 const grid = document.querySelector("#grid");
-drawGrid(gridSize);
-
-const button = document.querySelector("button");
-button.addEventListener("click", buttonClick);
-
 //Event for drawing on the grid
 grid.addEventListener("mouseover", (e) => {
     const target = e.target;
     
     target.style.backgroundColor = "black";
 })
+
+const button = document.querySelector("button");
+button.addEventListener("click", buttonClick);
+drawGrid();
+
+
+
+

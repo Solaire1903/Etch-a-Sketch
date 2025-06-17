@@ -5,7 +5,6 @@ function drawGrid() {
         square.classList.add("square");
         square.style.width = `${grid.offsetWidth / gridSize}px`;
         square.style.height = `${grid.offsetWidth / gridSize}px`;
-        square.style.outline = "solid red 1px"
         grid.appendChild(square);
     }
 }
@@ -34,10 +33,11 @@ function buttonClick() {
     drawGrid();
 }
 
+
+//Main Script
 let gridSize = 16;
 
 const grid = document.querySelector("#grid");
-//Event for drawing on the grid
 grid.addEventListener("mouseover", (e) => {
     const target = e.target;
     
@@ -47,7 +47,3 @@ grid.addEventListener("mouseover", (e) => {
 const button = document.querySelector("button");
 button.addEventListener("click", buttonClick);
 drawGrid();
-
-
-
-

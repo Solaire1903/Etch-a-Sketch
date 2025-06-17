@@ -21,5 +21,12 @@ const button = document.querySelector("button");
 button.addEventListener("click", buttonClick);
 
 function buttonClick() {
-    const input = prompt("Enter new grid Size (must be smaller than 100):");
+    const input = prompt("Enter new Grid Size (must be between 1 and 100):");
+    if (input === null) {
+        return;
+    }
+    if (!Number.isInteger(Number(input)) || input > 100 || input < 1) {
+        alert("Please enter a valid number");
+        return;
+    }
 }

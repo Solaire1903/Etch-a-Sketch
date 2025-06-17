@@ -10,6 +10,7 @@ for (let i = 0; i < gridSize * gridSize; i++) {
     grid.appendChild(square);
 }
 
+//Event Listener for drawing on the grid
 grid.addEventListener("mouseover", (e) => {
     const target = e.target;
     

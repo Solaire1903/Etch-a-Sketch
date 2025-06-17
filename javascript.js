@@ -1,6 +1,3 @@
-let gridSize = 16;
-const grid = document.querySelector("#grid");
-
 //Create squares in grid
 function drawGrid(gridSize) {
     for (let i = 0; i < gridSize * gridSize; i++) {
@@ -11,16 +8,6 @@ function drawGrid(gridSize) {
         grid.appendChild(square);
     }
 }
-
-//Event Listener for drawing on the grid
-grid.addEventListener("mouseover", (e) => {
-    const target = e.target;
-    
-    target.style.backgroundColor = "black";
-})
-
-const button = document.querySelector("button");
-button.addEventListener("click", buttonClick);
 
 function buttonClick() {
     const input = prompt("Enter new Grid Size (must be between 1 and 100):");
@@ -33,4 +20,19 @@ function buttonClick() {
     }
 
     gridSize = Number(input);
+    drawGrid(gridSize);
 }
+
+let gridSize = 16;
+const grid = document.querySelector("#grid");
+drawGrid(gridSize);
+
+const button = document.querySelector("button");
+button.addEventListener("click", buttonClick);
+
+//Event for drawing on the grid
+grid.addEventListener("mouseover", (e) => {
+    const target = e.target;
+    
+    target.style.backgroundColor = "black";
+})

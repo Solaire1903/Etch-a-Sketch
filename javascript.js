@@ -1,12 +1,17 @@
 //Create squares in grid
 function drawGrid() {
+    const fragment = document.createDocumentFragment();
+    const squareSize = grid.offsetWidth / gridSize;
+
     for (let i = 0; i < gridSize * gridSize; i++) {
         const square = document.createElement("div");
         square.classList.add("square");
-        square.style.width = `${grid.offsetWidth / gridSize}px`;
-        square.style.height = `${grid.offsetWidth / gridSize}px`;
-        grid.appendChild(square);
+        square.style.width = `${squareSize}px`;
+        square.style.height = `${squareSize}px`;
+        fragment.appendChild(square);
     }
+
+    grid.appendChild(fragment);
 }
 
 //Removes the squares in the grid

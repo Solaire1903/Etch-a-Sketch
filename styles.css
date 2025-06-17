@@ -12,5 +12,5 @@ body {
     flex-wrap: wrap;
     width: 800px;
     height: 800px;
-    border: solid black;
+    outline: solid black;
 }

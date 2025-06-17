@@ -16,3 +16,10 @@ grid.addEventListener("mouseover", (e) => {
     
     target.style.backgroundColor = "black";
 })
+
+const button = document.querySelector("button");
+button.addEventListener("click", buttonClick);
+
+function buttonClick() {
+    const input = prompt("Enter new grid Size (must be smaller than 100):");
+}

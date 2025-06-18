@@ -50,6 +50,12 @@ buttonGrid.addEventListener("click", buttonGridClick);
 const buttonColor = document.querySelector("#buttonColor");
 buttonColor.addEventListener("click", () => colorMode = !colorMode)
 
+const buttonClear = document.querySelector("#buttonClear");
+buttonClear.addEventListener("click", () => {
+    removeGrid();
+    drawGrid();
+});
+
 const grid = document.querySelector("#grid");
 grid.addEventListener("mouseover", (e) => {
     const target = e.target;

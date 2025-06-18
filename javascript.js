@@ -23,7 +23,7 @@ function removeGrid() {
 }
 
 //Asks for user input and draws new grid
-function buttonClick() {
+function buttonGridClick() {
     const input = prompt("Enter new Grid Size (must be between 1 and 100):");
     if (input === null) {
         return;
@@ -42,16 +42,27 @@ function buttonClick() {
 
 //Main Script
 let gridSize = 16;
+let colorMode = false;
+
+const buttonGrid = document.querySelector("#buttonGrid");
+buttonGrid.addEventListener("click", buttonGridClick);
+
+const buttonColor = document.querySelector("#buttonColor");
+buttonColor.addEventListener("click", () => colorMode = !colorMode)
 
 const grid = document.querySelector("#grid");
 grid.addEventListener("mouseover", (e) => {
     const target = e.target;
     
     if (target.classList.contains("square")) {
-        target.style.backgroundColor = "black";
+        if (!colorMode) target.style.backgroundColor = "black";
+        else {
+            const red = Math.floor(Math.random() *256);
+            const green = Math.floor(Math.random() *256);
+            const blue = Math.floor(Math.random() *256);
+            target.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
+        }
     }
 })
 
-const button = document.querySelector("button");
-button.addEventListener("click", buttonClick);
 drawGrid();

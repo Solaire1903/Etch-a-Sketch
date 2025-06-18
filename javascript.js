@@ -24,7 +24,7 @@ function removeGrid() {
 
 //Asks for user input and draws new grid
 function buttonGridClick() {
-    const input = prompt("Enter new Grid Size (must be between 1 and 100):");
+    const input = prompt("Enter new Grid Size between 1 and 100:");
     if (input === null) {
         return;
     }

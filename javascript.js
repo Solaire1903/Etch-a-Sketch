@@ -57,9 +57,11 @@ buttonClear.addEventListener("click", () => {
 });
 
 const grid = document.querySelector("#grid");
+//Event for drawing the squares
 grid.addEventListener("mouseover", (e) => {
     const target = e.target;
     
+    //Prevent whole grid from being colored accidentally
     if (target.classList.contains("square")) {
         if (!colorMode)  target.style.backgroundColor = "black";
         else {

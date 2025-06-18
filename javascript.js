@@ -8,6 +8,7 @@ function drawGrid() {
         square.classList.add("square");
         square.style.width = `${squareSize}px`;
         square.style.height = `${squareSize}px`;
+        square.style.opacity = 0;
         fragment.appendChild(square);
     }
 

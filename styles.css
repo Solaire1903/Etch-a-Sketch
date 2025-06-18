@@ -14,3 +14,7 @@ body {
     height: 800px;
     outline: solid black;
 }
+
+.square {
+    opacity: 0;
+}

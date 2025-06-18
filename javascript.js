@@ -61,13 +61,15 @@ grid.addEventListener("mouseover", (e) => {
     const target = e.target;
     
     if (target.classList.contains("square")) {
-        if (!colorMode) target.style.backgroundColor = "black";
+        if (!colorMode)  target.style.backgroundColor = "black";
         else {
             const red = Math.floor(Math.random() *256);
             const green = Math.floor(Math.random() *256);
             const blue = Math.floor(Math.random() *256);
             target.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
         }
+        target.style.opacity = Number(window.getComputedStyle(target).getPropertyValue("opacity"))
+                               + 0.1;
     }
 })
 

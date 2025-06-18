@@ -47,7 +47,9 @@ const grid = document.querySelector("#grid");
 grid.addEventListener("mouseover", (e) => {
     const target = e.target;
     
-    target.style.backgroundColor = "black";
+    if (target.classList.contains("square")) {
+        target.style.backgroundColor = "black";
+    }
 })
 
 const button = document.querySelector("button");
